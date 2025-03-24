@@ -1,4 +1,5 @@
 import threading
+import time
 import tkinter as tk
 
 import pyautogui
@@ -38,8 +39,11 @@ class AutoKeyPresser:
                     self.status_label.config(text="Выполнение прервано.")
                     return
                 pyautogui.press('h')
+                time.sleep(0.02)
                 pyautogui.press('enter')
+                time.sleep(0.02)
                 pyautogui.press('right')
+                time.sleep(0.02)
             self.status_label.config(text=f"Выполнено {count} повторений.")
         finally:
             self.action_in_progress.clear()
